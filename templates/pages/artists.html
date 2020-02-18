@@ -1,0 +1,22 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Fyyur | Artists{% endblock %}
+{% block content %}
+<table class="artist-table">
+	<tr>
+		<th>Band Image</th>
+		<th>Band Name</th>
+	</tr>
+	{% for artist in artists %}
+	<tr>
+		<td>
+			<img src="{{ artist.image_link}}" />
+		</td>
+		<td>
+			<a href="/artists/{{ artist.id }}">
+				<h5>{{ artist.name }}</h5>
+			</a>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}
